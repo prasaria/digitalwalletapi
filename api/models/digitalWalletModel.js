@@ -14,9 +14,9 @@ var WalletSchema = new Schema({
     default: Date.now
   },
   balance: {
-    type: Number(),
-    integer: true
-  }
+        type: Number,
+        integer: true
+    }
 });
 
 WalletSchema.plugin(integerValidator);

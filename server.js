@@ -1,9 +1,9 @@
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 8080,
-  mongoose = require('mongoose'),
-  Wallet = require('./api/models/digitalWalletModel'), //created model loading here
-  bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+var  port = process.env.PORT || 8080;
+var  mongoose = require('mongoose');
+var  Wallet = require('./api/models/digitalWalletModel'); //created model loading here
+var  bodyParser = require('body-parser');
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
@@ -19,6 +19,10 @@ routes(app); //register the route
 
 
 app.listen(port);
+
+app.use(function(req, res) {
+  res.status(404).send({url: req.originalUrl + ' not found'})
+});
 
 
 console.log('digitalWallet RESTful API server started on: ' + port);
