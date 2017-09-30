@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(app) {
-  var digitalWallets = require('../controllers/digitalWalletController');
+  var digitalWallets = require('../controllers/digitalWalletControllers');
 
   // digitalWallets Routes
   app.route('/accounts')
