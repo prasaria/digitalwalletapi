@@ -1,6 +1,7 @@
 'use strict';
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var integerValidator = require('mongoose-integer');
 
 
 var WalletSchema = new Schema({
@@ -13,9 +14,11 @@ var WalletSchema = new Schema({
     default: Date.now
   },
   balance: {
-    type: Int32Array,
-    default: 100000
+    type: Number(),
+    integer: true
   }
 });
+
+WalletSchema.plugin(integerValidator);
 
 module.exports = mongoose.model('Wallets', WalletSchema);
