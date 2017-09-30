@@ -4,7 +4,7 @@
 var mongoose = require('mongoose'),
   Wallet = mongoose.model('Wallets');
 
-exports.list_all_tasks = function(req, res) {
+exports.list_all_accounts = function(req, res) {
   Wallet.find({}, function(err, account) {
     if (err)
       res.send(err);
